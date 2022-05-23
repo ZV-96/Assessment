@@ -21,7 +21,7 @@ def questions():
         except ValueError:
 
         else:
-            print("incorrect answer")
+            print("Incorrect answer")
 
 
 # Main routine
