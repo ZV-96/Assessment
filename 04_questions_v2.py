@@ -18,8 +18,6 @@ def questions():
             score += 1
             break
 
-        except ValueError:
-
         else:
             print("Incorrect answer")
 
