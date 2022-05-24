@@ -2,9 +2,9 @@
 differentiating between invalid answers and incorrect answers"""
 
 
+# function to ask questions
 def questions():
 
-    error = "Invalid input"
     score = 0
     answer = input("are you ready to play?: ")
     if answer.lower() == "yes" or "y":
@@ -18,10 +18,11 @@ def questions():
             score += 1
             break
 
-        except ValueError:
+        if int == answer:
+            print("<error> please type a, b, or c")
 
         else:
-            print("Incorrect answer")
+            print("incorrect answer")
 
 
 # Main routine
