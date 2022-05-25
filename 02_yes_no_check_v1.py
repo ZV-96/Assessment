@@ -1,3 +1,5 @@
+"""Yes/no checking component"""
+
 # Ask the user if they have played before
 show_instructions = input("Have you played this game before? :").lower()
 

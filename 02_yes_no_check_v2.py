@@ -1,3 +1,6 @@
+"""Yes/no checking component - Based on 02_yes_no_check_v1
+adding the ability to say y instead of yes"""
+
 # Ask the user if they have played before
 show_instructions = input("Have you played this game before?: ").lower()
 
