@@ -1,6 +1,8 @@
 """00_Base_component_v1
 components added after they have been created and tested"""
 
+import random
+
 
 # Functions
 # Integer checking function - loops until a valid number is entered
@@ -58,11 +60,41 @@ def instructions():
     print()
     print("The rules of the quiz will go here")
     print()
-    print("Program continues")
+    maori_numbers()
+
+
+def maori_numbers():
+    # list of numbers for the questions
+    num_list = [[1, "tahi"], [2, "rua"], [3, "toru"], [4, "wha"], [5, "rima"], [6, "ono"], [7, "whitu"],
+                [8, "waru"], [9, "iwa"], [10, "tekau"]]
+
+    # players score
+    player_score = 0
+    # Shuffles list
+    random.shuffle(num_list)
+    for i in num_list:
+        # ask user for input
+        attempt = input(f"What is the Maori word for {i[0]}?: ").lower()
+        if attempt == i[1]:
+            # if users correct +1 to score then print correct
+            player_score += 1
+            print(f"Correct")
+        else:
+            # else print incorrect
+            print(f"Incorrect, the answer was {i[1]}")
     print()
+
+    # if player score below 10 print score
+    if player_score != 10:
+        print(f"Your final score is {player_score}/10")
+    # if player score is 10 print congratulation message
+    else:
+        print(f"Congratulations - You got a perfect score!")
 
 
 # Main routine
+print("Welcome to the moari number quiz!\n"
+      "To start off could we please get your name and age?")
 name = get_name()
 age = get_age()
 print()
@@ -76,4 +108,4 @@ if played_before == "No":
     instructions()
 
 else:
-    print("Program continues")
+    maori_numbers()

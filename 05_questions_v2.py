@@ -1,31 +1,27 @@
 """The second version of 05_questions_v1
-differentiating between invalid answers and incorrect answers"""
+adding a list to make it random and able to loop"""
 
 
-# function to ask questions
-def questions():
+import random
 
-    score = 0
-    answer = input("are you ready to play?: ")
-    if answer.lower() == "yes" or "y":
-        answer = input("Question 1: What does Tahi mean in maori \n"
-                           "a. 1 \n"
-                           "b. 5 \n"
-                           "c. 10 \n")
+# list of numbers for the questions
+num_list = [[1, "tahi"], [2, "rua"], [3, "toru"], [4, "wha"], [5, "rima"], [6, "ono"], [7, "whitu"],
+            [8, "waru"], [9, "iwa"], [10, "tekau"]]
 
-        while answer.lower() == "a":
-            print("correct answer")
-            score += 1
-            break
+# players score
+player_score = 0
+# Shuffle list
+random.shuffle(num_list)
+for i in num_list:
+    # ask for user input
+    attempt = input(f"What is the Maori word for {i[0]}?: ")
+    if attempt == i[1]:
+        # if users correct +1 to score then print correct
+        player_score += 1
+        print(f"Correct{player_score}")
+    else:
+        # if not print incorrect
+        print("Incorrect")
 
-        if int == answer:
-            print("<error> please type a, b, or c")
-
-        else:
-            print("incorrect answer")
-
-
-# Main routine
-questions()
-print("next question continues")
-
+# show player their final score
+print(f"Your final score is {player_score}/10")
